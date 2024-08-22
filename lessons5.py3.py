@@ -3,7 +3,7 @@ def create_hashtag(input_string):
     translator = str.maketrans('', '', string.punctuation + '')
     cleaned_string = input_string.translate(translator)
 
-    hashtag = cleaned_string.replace('','').title()
+    hashtag = ''.join(word.capitalize() for word in cleaned_string.split())
     hashtag = f'#{hashtag}'
 
     if len(hashtag) > 140:
